@@ -3,7 +3,7 @@ import requests
 
 
 def get_customers():
-    url = 'https://sage.briostack.io/test/rest/v1/customers'
+    url = 'https://apisandbox.briostack.io/rest/v1/customers'
 
     try:
 
