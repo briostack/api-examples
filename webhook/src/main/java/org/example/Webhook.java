@@ -33,7 +33,7 @@ import static org.apache.hc.core5.http.HttpStatus.*;
 public class Webhook {
 
   //  for demonstration purposes, use the freemium "webhook.site" app as our webhook target
-  static final String WEBHOOKURL = "https://webhook.site/#!/view/91ed1091-524e-4b48-a9af-0ed281009cd7";
+  static final String WEBHOOKURL = "https://webhook.site/cddb22e3-9846-41c1-bb13-60f949ec9c72";
 
   //  this sample uses Google's Gson to convert Java types
   //  to and from JSON, but there are alternatives, such as
@@ -123,7 +123,7 @@ public class Webhook {
           throw new ApiException(op + ": the api key does not have permission to create a lead");
         case SC_BAD_REQUEST:
           Type targetType = new TypeToken<Map<String, Object>>() {}.getType();
-          Map<String, Object> content = null;
+          Map<String, Object> content;
           try {
             content = GSON.fromJson(EntityUtils.toString(response.getEntity()), targetType);
             throw new ApiException(op + ": there was a problem with the request: " + content.get("message"));
